@@ -1,0 +1,127 @@
+<link rel="import" href="bower_components/core-icon-button/core-icon-button.html">
+<link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+<link rel="import" href="bower_components/paper-input/paper-input-decorator.html">
+<link rel="import" href="bower_components/core-icons/core-icons.html">
+<link rel="import" href="bower_components/paper-fab/paper-fab.html">
+<link rel="import" href="bower_components/paper-button/paper-button.html">
+<link rel="import" href="bower_components/core-collapse/core-collapse.html">
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+
+<polymer-element name= "login-register">
+<template>
+<style>
+ #core_card {
+        position: absolute;
+	   padding-bottom: 20px;
+        width: 30%;
+        height: auto;
+        border-radius: 2px;
+        box-shadow: rgba(0, 0, 0, 0.0980392) 0px 2px 4px, rgba(0, 0, 0, 0.0980392) 0px 0px 3px;
+        left: 35%;
+        top: 12%;
+        margin: auto;
+        background-color: rgb(255, 255, 255);
+      }
+      #core_toolbar {
+        right: 0px;
+        color: rgb(255, 255, 255);
+        fill: rgb(255, 255, 255);
+        width: 100%;
+        top: 0px;
+        margin: 0px;
+        padding: 0px;
+        height: auto;
+        position: initial;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        font-stretch: normal;
+        font-size: 30px;
+        line-height: normal;
+        font-family: arial, sans-serif;
+        background-color: rgb(79, 125, 201);
+      }
+     #input paper-input-decorator 
+	 {
+	 padding: 0.75em 1em;
+	 font-size:22px;
+	 }
+	 paper-button[raised].colored {
+      background:rgb(79, 125, 201);
+      color: #fff;
+	  width:40%;
+	  margin-left: 1.5em;
+	  margin-top: 1.5em;
+    }
+	paper-button[raised]{
+	 width:40%;
+	  margin-left: 1.5em;
+	  margin-top: 1.5em;
+	  color: rgb(79, 125, 201);
+	}
+ 
+</style>
+
+<core-card id="core_card">
+      <core-toolbar id="core_toolbar">
+        <div id="div" flex>{{Form_type}}</div>
+      </core-toolbar>
+	  <div id="input">
+     <paper-input-decorator label={{label1}} floatingLabel >
+      <input is="core-input">
+    </paper-input-decorator>
+	<core-collapse id="collapse1">
+             <paper-input-decorator label={{label2}} floatingLabel >
+             <input is="core-input">
+             </paper-input-decorator>
+      </core-collapse>
+	<paper-input-decorator label="Password" floatingLabel>
+      <input is="core-input">
+     </paper-input-decorator>
+	 <core-collapse id="collapse2">
+             <paper-input-decorator label="Confirm Password" floatingLabel>
+             <input is="core-input">
+             </paper-input-decorator>
+      </core-collapse>
+	</div>
+	<!--<paper-fab icon="lock-open" title="arrow-forward">Login</paper-fab>  -->
+	<paper-button raised class="colored" id="but1">{{button1}}</paper-button>
+	<paper-button raised id="but2" on-tap = {{Register_form}}>{{button2}}</paper-button>
+ </core-card>
+</template>
+
+<script>
+  Polymer({
+  Register_form : function(){/*var count = 0 ;
+                                       this.$.collapse2.toggle();
+                                       this.$.collapse1.toggle();
+                                        if(count%2 == 0){
+									   this.Form_type = 'Register';
+									   this.button1 = 'Register';
+									   this.button2 = 'Login';
+									   this.label1 = 'Username';}
+									   else
+									   {
+									   this.Form_type = 'Login';
+									   this.button1 = 'Login';
+									   this.button2 = 'New User';
+									   this.label1 = 'Username or Email ID';
+									   }
+									   count = count+1 ;*/
+									   this.$.collapse2.toggle();
+                                       this.$.collapse1.toggle();
+									   this.Form_type == 'Register' ? this.Form_type = 'Login' : this.Form_type = 'Register';
+									   this.button1 == 'Register' ? this.button1 = 'Login' : this.button1 = 'Register';
+									   this.button2 == 'Login' ? this.button2 = 'New User' : this.button2 = 'Login';
+									   this.label1 == 'Username' ? this.label1 = 'Username or Email ID' : this.label1 = 'Username';},
+  Form_type : 'Login',
+  button1 :  'Login',
+  button2 : 'New User',
+  label1: 'Username or Email ID',
+  label2: 'Email ID'
+  
+    
+  });
+  </script>
+</polymer-element>

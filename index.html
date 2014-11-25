@@ -3,16 +3,10 @@
 
 <head>
 
-  <title>unquote</title>
+  <title>LOGIN</title>
 
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-<link rel="import" href="bower_components/core-icon-button/core-icon-button.html">
-<link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
-<link rel="import" href="bower_components/paper-input/paper-input-decorator.html">
-<link rel="import" href="bower_components/core-icons/core-icons.html">
-<link rel="import" href="bower_components/paper-fab/paper-fab.html">
-<link rel="import" href="bower_components/paper-button/paper-button.html">
-<link rel="import" href="bower_components/core-collapse/core-collapse.html">
+<link rel="import" href="login-register.html">
 
   <script src="bower_components/platform/platform.js">
   </script>
@@ -20,93 +14,11 @@
 
   
 
-  <style>
   
-  
-      #core_card {
-        position: absolute;
-	   padding-bottom: 20px;
-        width: 30%;
-        height: auto;
-        border-radius: 2px;
-        box-shadow: rgba(0, 0, 0, 0.0980392) 0px 2px 4px, rgba(0, 0, 0, 0.0980392) 0px 0px 3px;
-        left: 35%;
-        top: 12%;
-        margin: auto;
-        background-color: rgb(255, 255, 255);
-      }
-      #core_toolbar {
-        right: 0px;
-        color: rgb(255, 255, 255);
-        fill: rgb(255, 255, 255);
-        width: 100%;
-        top: 0px;
-        margin: 0px;
-        padding: 0px;
-        height: auto;
-        position: initial;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: normal;
-        font-stretch: normal;
-        font-size: 30px;
-        line-height: normal;
-        font-family: arial, sans-serif;
-        background-color: rgb(79, 125, 201);
-      }
-     #input paper-input-decorator 
-	 {
-	 padding: 0.75em 1em;
-	 font-size:22px;
-	 }
-	 paper-button[raised].colored {
-      background:rgb(79, 125, 201);
-      color: #fff;
-	  width:40%;
-	  margin-left: 1.5em;
-	  margin-top: 1.5em;
-    }
- 
-  
-  </style>
-
 </head>
 
 <body unresolved>
-
- <core-card id="core_card">
-      <core-toolbar id="core_toolbar">
-        <div id="div" flex>Login</div>
-      </core-toolbar>
-	  <div id="input">
-     <paper-input-decorator label="Username or Email-ID" floatingLabel >
-      <input is="core-input">
-    </paper-input-decorator>
-	<core-collapse id="collapse1">
-             <paper-input-decorator label="Username or Email-ID" floatingLabel >
-             <input is="core-input">
-             </paper-input-decorator>
-      </core-collapse>
-	<paper-input-decorator label="Password" floatingLabel>
-      <input is="core-input">
-     </paper-input-decorator>
-	 <core-collapse id="collapse2">
-             <paper-input-decorator label="Password" floatingLabel>
-             <input is="core-input">
-             </paper-input-decorator>
-      </core-collapse>
-	</div>
-	<!--<paper-fab icon="lock-open" title="arrow-forward">Login</paper-fab>  -->
-	<paper-button raised class="colored" id="but1">Login</paper-button>
-	<paper-button raised class="colored" id="but2" onclick = "Register_form()">New User</paper-button>
- </core-card>
- <script>
-function Register_form() {
-    document.getElementById('collapse1').toggle();
-	document.getElementById('collapse2').toggle();
-}
-</script>
- 
-</body>
+<login-register></login-register>
+ </body>
 
 </html>
